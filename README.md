@@ -36,6 +36,8 @@ Projeto simples de um sistema de anotações WEB utilizando banco de dados MySQL
 
 Xampp porta:81.
 
+Composer.
+
 Navegador.
 
 Visual Studio Code.
