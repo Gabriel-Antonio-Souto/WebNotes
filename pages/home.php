@@ -9,7 +9,7 @@
         <link rel="icon" type="image/x-icon" href="assets/img/logo.svg" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="assets/css/estilo.css?11" rel="stylesheet">
+        <link href="assets/css/estilo.css?1922" rel="stylesheet">
     </head>
     <body>
 
@@ -22,7 +22,8 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
                         <li class="nav-item"><a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#cadModal">Cadastra-se</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/Gabriel-Antonio-Souto/"><i class="bi bi-github"></i> GitHub</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://gabriel-antonio-souto.github.io/meu_portfolio/">Desenvolvedor</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/Gabriel-Antonio-Souto/WebNotes"><i class="bi bi-github"></i> GitHub</a></li>
                     </ul>
                 </div>
             </div>
@@ -60,7 +61,7 @@
         </section>
         
         <!-- Sobre -->
-        <section>
+        <section id="about">
             <div class="main">
                 <div class="left">
                     <div class="cartao">
@@ -157,7 +158,7 @@
         <!-- Rodapé-->
         <footer class="footer">
            <div class="bg-dark py-3">
-                <div class="container px-4 px-lg-5">Copyright &copy; 2023 - Web Notes</div>
+                <div class="container px-4 px-lg-5">Copyright &copy; 2024 - Web Notes</div>
             </div>
         </footer>
 
@@ -184,7 +185,7 @@
                 
                     const dadosForm = new FormData(login);
 
-                    const dados = await fetch("http://localhost:81/webnotes/api/login/",{
+                    const dados = await fetch("http://localhost/webnotes/api/login/",{
                         method: "POST",
                         body: dadosForm
                     });
@@ -220,7 +221,7 @@
                 
                     const dadosForm = new FormData(formCad);
 
-                    const dados = await fetch("http://localhost:81/webnotes/api/usuario/",{
+                    const dados = await fetch("http://localhost/webnotes/api/usuario/",{
                         method: "POST",
                         body: dadosForm
                     });
@@ -268,7 +269,7 @@
                 
                     const dadosForm = new FormData(form_email_senha);
 
-                    const dados = await fetch("http://localhost:81/webnotes/api/senha/esqueci/",{
+                    const dados = await fetch("http://localhost/webnotes/api/senha/esqueci/",{
                         method: "POST",
                         body: dadosForm
                     });
@@ -291,8 +292,6 @@
                                 window.location.reload();           
                             }
                         })
-
-                        
 
                     }else{
                         Swal.fire({

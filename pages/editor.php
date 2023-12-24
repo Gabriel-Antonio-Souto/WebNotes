@@ -15,7 +15,7 @@
   }
 
   // url da API
-  $url2 = "http://localhost:81/webnotes/api/usuario/";
+  $url2 = "http://localhost/webnotes/api/usuario/";
 
   $ch2 = curl_init();
 
@@ -28,6 +28,14 @@
   curl_close($ch2);
 
   $dados_user = json_decode($dados_users,false);
+
+  $nome = "";                           
+  $email = "";               
+  $id = 0;
+  $senha = "";
+  $id_anotacao = 0;                           
+  $titulo = "";               
+  $texto = "";
 
   if($dados_user->status == 200){
     foreach ($dados_user->dados as $linha_user){ 
@@ -43,7 +51,7 @@
   }
   if (isset($_GET['id'])) {
     // url da API
-    $url = "http://localhost:81/webnotes/api/anotacao/";
+    $url = "http://localhost/webnotes/api/anotacao/";
 
     $ch = curl_init();
 
@@ -100,7 +108,6 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="inicio"><i class="bi bi-file-earmark-text-fill"></i> Anotações</a></li>
                         <li class="nav-item"><a class="nav-link" href="configuracoes"><i class="bi bi-gear-fill"></i> Configurações</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/Gabriel-Antonio-Souto/"><i class="bi bi-github"></i> GitHub</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout"><i class="bi bi-door-open-fill"></i> Sair</a></li>
                     </ul>
                 </div>
@@ -192,7 +199,7 @@
               
                   const dadosForm = new FormData(formcad);
 
-                  const dados = await fetch("http://localhost:81/webnotes/api/anotacao/",{
+                  const dados = await fetch("http://localhost/webnotes/api/anotacao/",{
                       method: "POST",
                       body: dadosForm
                   });

@@ -8,6 +8,8 @@ if (isset($_COOKIE['corCookie'])){
             #mainNavLog {
                 box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
                 background-color: ".$cor.";
+                backdrop-filter: blur(10.5px);
+                -webkit-backdrop-filter: blur(10.5px);
                 transition: background-color 0.2s ease;
               }
               #mainNavLog .navbar-brand {
@@ -82,6 +84,8 @@ if (isset($_COOKIE['corCookie'])){
         #mainNavLog {
         box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
         background-color: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(10.5px);
+        -webkit-backdrop-filter: blur(10.5px);
         transition: background-color 0.2s ease;
         }
         #mainNavLog .navbar-brand {

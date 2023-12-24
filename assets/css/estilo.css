@@ -23,9 +23,11 @@ body::-webkit-scrollbar-thumb {
 }
 
 /* Menu */
-#mainNav {
+#mainNav{
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
   background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10.5px);
+  -webkit-backdrop-filter: blur(10.5px);
   transition: background-color 0.2s ease;
 }
 #mainNav .navbar-brand {
@@ -167,6 +169,90 @@ body::-webkit-scrollbar-thumb {
       width: 100%;
   }
   .cartao > h1{
+    font-size:50px;
+    color: #0d6efd;
+    margin-bottom: 30px;
+  }
+}
+
+
+/* #about */
+#about .main{
+  width: 100%;
+  height: 100vh;
+  background: #fffafa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#about .left{
+  width: 40vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fffafa;
+}
+#about .cartao > h1{
+  font-size:70px;
+  color: #0d6efd;
+  margin-bottom: 30px;
+}
+#about .cartao > h2{
+  font-size:40px;
+  color: #0d6efd;
+  margin-bottom: 30px;
+}
+#about .cartao > p{
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #444647;
+  text-align: justify;
+}
+#about .right{
+  width: 60vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#about .cartao{
+  width: 80%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: #fffafa;
+  border: none;
+}
+@media only screen and (max-width: 950px) {
+  #about .cartao{
+      width: 80%;
+  }
+}
+@media only screen and (max-width: 600px) {
+  #about .main{
+      flex-direction: column-reverse;
+  }
+  #about .left > h1{
+      display: block;
+  }
+  #about .left{
+      width: 100%;
+      height: auto;
+  }
+  #about .right{
+      width: 100%;
+      height: auto;
+  }
+  #about .left-img{
+      width: 50vw;
+  }
+  #about .cartao{
+      width: 100%;
+  }
+  #about .cartao > h1{
     font-size:50px;
     color: #0d6efd;
     margin-bottom: 30px;

@@ -24,7 +24,7 @@
             try {
 
                 $email = $_POST['email_recuperar'];
-                $link = "http://localhost:81/webnotes/senha?chave=$email";
+                $link = "http://localhost/webnotes/senha?chave=$email";
                 /*$mail->SMTPDebug = SMTP::DEBUG_SERVER;*/
                 $mail->CharSet = 'UTF-8';
                 $mail->isSMTP();
@@ -35,13 +35,13 @@
                 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
                 $mail->Port       = 2525;
 
-                $mail->setFrom('atendimento@webnotes.com', 'Recuperação de senha');
-                $mail->addAddress($email, $_SESSION['nome']);
+                $mail->setFrom('atendimento@webnotes.com.br', 'Recuperação de senha');
+                $mail->addAddress($email);
 
                 $mail->isHTML(true);                             
                 $mail->Subject = 'Recuperar senha';
-                $mail->Body    = "Você solicitou alteração de senha.<br><br>link de recuperação de senha: <b>$link</a></b><br><br>Se você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você acesse este link.<br><br>";
-                $mail->AltBody = "Você solicitou alteração de senha.\n\nlink de recuperação de senha:  <b>$link</a></b> \n\nSe você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você acesse este link.\n\n";
+                $mail->Body    = "Você solicitou alteração de senha.<br><br>link de recuperação de senha: <b><a href='$link'>Recuperar minha senha</a></b><br><br>Se você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você acesse este link.<br><br>";
+                $mail->AltBody = "Você solicitou alteração de senha.\n\nlink de recuperação de senha:  <b><a href='$link'>Recuperar minha senha</a></b> \n\nSe você não solicitou essa alteração, nenhuma ação é necessária. Sua senha permanecerá a mesma até que você acesse este link.\n\n";
 
                 $mail->send();
 

@@ -1,5 +1,5 @@
 <?php
 
-    define('URL', 'http://localhost/www/crud/');
+    define('URL', 'http://localhost/webnotes/');
 
 ?>

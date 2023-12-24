@@ -15,7 +15,7 @@
   }
 
   // url da API
-  $url = "http://localhost:81/webnotes/api/usuario/";
+  $url = "http://localhost/webnotes/api/usuario/";
 
   $ch = curl_init();
 
@@ -28,6 +28,11 @@
   curl_close($ch);
 
   $dados_user = json_decode($dados,false);
+
+  $nome = "";                           
+  $email = "";               
+  $id = 0;
+  $senha = "";
 
   if($dados_user->status == 200){
     foreach ($dados_user->dados as $linha){ 
@@ -54,7 +59,7 @@
         <link rel="icon" type="image/x-icon" href="assets/img/logo.svg" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.0/font/bootstrap-icons.css" rel="stylesheet" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link href="assets/css/estilo.css?19" rel="stylesheet">
+        <link href="assets/css/estilo.css?1922" rel="stylesheet">
     </head>
     <body>
 
@@ -71,7 +76,6 @@
                         <ul class="navbar-nav ms-auto my-2 my-lg-0">
                             <li class="nav-item"><a class="nav-link" href="inicio"><i class="bi bi-file-earmark-text-fill"></i> Anotações</a></li>
                             <li class="nav-item"><a class="nav-link" href="configuracoes"><i class="bi bi-gear-fill"></i> Configurações</a></li>
-                            <li class="nav-item"><a class="nav-link" href="https://github.com/Gabriel-Antonio-Souto/"><i class="bi bi-github"></i> GitHub</a></li>
                             <li class="nav-item"><a class="nav-link" href="logout"><i class="bi bi-door-open-fill"></i> Sair</a></li>
                         </ul>
                     </div>
@@ -157,7 +161,7 @@
                   <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                  <h3 style="text-align:center;color: black;font-weight: 700;">Editor</h3>
+                  <h3 style="text-align:center;color: black;font-weight: 700;">Alterar Senha</h3>
                 
                     <div class="form-login">
                       <form id="form_senha">
@@ -167,7 +171,7 @@
                           <br>
                           <input type="password" name="nova_confirmar" class="login" id="nova_confirmar" placeholder="Insira sua nova senha novamente" required>
                           <br>                         
-                          <button type="submit" class="btn-login">Cadastrar</button>
+                          <button type="submit" class="btn-login">Alterar</button>
                       </form>
                     </div>
                       
@@ -214,7 +218,7 @@
                     var nome = document.getElementById('nome').value
                     var email = document.getElementById('email').value
 
-                    const dados = await fetch("http://localhost:81/webnotes/api/usuario/?id="+id+"&nome="+nome+"&email="+email,{
+                    const dados = await fetch("http://localhost/webnotes/api/usuario/?id="+id+"&nome="+nome+"&email="+email,{
                         method: "PUT",
                     });
                 
@@ -261,7 +265,7 @@
                 
                     const dadosForm = new FormData(formSenha);
 
-                    const dados = await fetch("http://localhost:81/webnotes/api/senha/alterar/",{
+                    const dados = await fetch("http://localhost/webnotes/api/senha/alterar/",{
                         method: "POST",
                         body: dadosForm
                     });
@@ -303,7 +307,7 @@
 
             async function apagarDados(id) {
 
-              const dados = await fetch('http://localhost:81/webnotes/api/usuario/?id='+id,{
+              const dados = await fetch('http://localhost/webnotes/api/usuario/?id='+id,{
                   method: "DELETE",
               });
 

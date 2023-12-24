@@ -2,7 +2,7 @@
 
 <img align="center" with="100%" src="assets/img/webnotes.png" />
 
-Projeto simples de um sistema de anotações WEB utilizando banco de dados MySQL, PHP, JavaScript, CSS, framework Bootstrap e bibliotecas [@PHPMailer](https://github.com/PHPMailer/PHPMailer) e [@Trumbowyg](https://alex-d.github.io/Trumbowyg/).
+Projeto de um sistema de anotações WEB utilizando banco de dados MySQL, PHP, JavaScript, CSS, framework Bootstrap e bibliotecas [@PHPMailer](https://github.com/PHPMailer/PHPMailer) e [@Trumbowyg](https://alex-d.github.io/Trumbowyg/).
 
 ## Tecnologias utilizadas
 
@@ -34,10 +34,12 @@ Projeto simples de um sistema de anotações WEB utilizando banco de dados MySQL
 
 ## Requisitos
 
-Xampp porta:81.
+Xampp
 
-Composer.
+Composer
 
-Navegador.
+Navegador
 
-Visual Studio Code.
+mailtrap.io
+
+Visual Studio Code

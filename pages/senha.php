@@ -54,7 +54,7 @@
                 
                     const dadosForm = new FormData(formCad);
 
-                    const dados = await fetch("http://localhost:81/webnotes/api/senha/recuperar/",{
+                    const dados = await fetch("http://localhost/webnotes/api/senha/recuperar/",{
                         method: "POST",
                         body: dadosForm
                     });

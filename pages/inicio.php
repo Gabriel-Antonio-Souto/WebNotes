@@ -15,7 +15,7 @@
   }
 
   // url da API
-  $url2 = "http://localhost:81/webnotes/api/usuario/";
+  $url2 = "http://localhost/webnotes/api/usuario/";
 
   $ch2 = curl_init();
 
@@ -28,6 +28,11 @@
   curl_close($ch2);
 
   $dados_user = json_decode($dados_users,false);
+
+  $nome = "";                           
+  $email = "";               
+  $id = 0;
+  $senha = "";
 
   if($dados_user->status == 200){
     foreach ($dados_user->dados as $linha_user){ 
@@ -43,7 +48,7 @@
   }
 
   // url da API
-  $url = "http://localhost:81/webnotes/api/anotacao/";
+  $url = "http://localhost/webnotes/api/anotacao/";
 
   $ch = curl_init();
 
@@ -83,7 +88,6 @@
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="inicio"><i class="bi bi-file-earmark-text-fill"></i> Anotações</a></li>
                         <li class="nav-item"><a class="nav-link" href="configuracoes"><i class="bi bi-gear-fill"></i> Configurações</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://github.com/Gabriel-Antonio-Souto/"><i class="bi bi-github"></i> GitHub</a></li>
                         <li class="nav-item"><a class="nav-link" href="logout"><i class="bi bi-door-open-fill"></i> Sair</a></li>
                     </ul>
                 </div>
@@ -141,18 +145,18 @@
               </thead>
               <tbody>
               
-            <?php
-                if($dados_anotacao->status == 200){
-                  foreach ($dados_anotacao->dados as $linha){ 
-                    if($_SESSION['id'] == $linha->idUsuario) {                                
-            ?>
+                <?php
+                    if($dados_anotacao->status == 200){
+                      foreach ($dados_anotacao->dados as $linha){ 
+                        if($_SESSION['id'] == $linha->idUsuario) {                                
+                ?>
 
                 <tr>
                   <th scope="row"><?php echo $linha->idTexto;?></th>
                   <td><?php echo $linha->tituloTexto;?></td>
                   <td>
-                    <a href="editor?id=<?php echo $linha->idTexto;?>" class="btn btn-primary">Visualizar</a>
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#excluir<?php echo $linha->idTexto;?>" class="btn btn-danger">Excluir</a>             
+                    <a href="editor?id=<?php echo $linha->idTexto;?>" class="btn btn-primary"><i class="bi bi-eye-fill"></i> Visualizar</a>
+                    <a href="#" data-bs-toggle="modal" data-bs-target="#excluir<?php echo $linha->idTexto;?>" class="btn btn-danger"><i class="bi bi-trash3-fill"></i> Excluir</a>             
                   </td>
                 </tr>                   
               
@@ -218,7 +222,7 @@
               
                   const dadosForm = new FormData(formcad);
 
-                  const dados = await fetch("http://localhost:81/webnotes/api/anotacao/",{
+                  const dados = await fetch("http://localhost/webnotes/api/anotacao/",{
                       method: "POST",
                       body: dadosForm
                   });
@@ -259,7 +263,7 @@
 
             async function apagarDados(id) {
 
-            const dados = await fetch('http://localhost:81/webnotes/api/anotacao/?id='+id,{
+            const dados = await fetch('http://localhost/webnotes/api/anotacao/?id='+id,{
                 method: "DELETE",
             });
 
