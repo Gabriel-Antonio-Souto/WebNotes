@@ -31,9 +31,9 @@
 
   $nome = "";                           
   $email = "";               
-  $id = 0;
+  $id = "";
   $senha = "";
-  $id_anotacao = 0;                           
+  $id_anotacao = "";                           
   $titulo = "";               
   $texto = "";
 

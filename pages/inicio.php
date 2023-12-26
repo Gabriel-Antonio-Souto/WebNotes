@@ -31,7 +31,7 @@
 
   $nome = "";                           
   $email = "";               
-  $id = 0;
+  $id = "";
   $senha = "";
 
   if($dados_user->status == 200){
