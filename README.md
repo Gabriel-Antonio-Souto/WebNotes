@@ -40,6 +40,6 @@ Composer
 
 Navegador
 
-mailtrap.io
+Mailtrap.io
 
 Visual Studio Code
