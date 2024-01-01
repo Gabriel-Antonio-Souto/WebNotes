@@ -2,7 +2,7 @@
 
 <img align="center" with="100%" src="assets/img/webnotes.png" />
 
-Projeto de um sistema de anotações WEB utilizando banco de dados MySQL, PHP, JavaScript, CSS, framework Bootstrap e bibliotecas [@PHPMailer](https://github.com/PHPMailer/PHPMailer) e [@Trumbowyg](https://alex-d.github.io/Trumbowyg/).
+Projeto de um sistema de anotações WEB utilizando banco de dados MySQL, PHP, JavaScript, CSS, framework Bootstrap e bibliotecas [@PHPMailer](https://github.com/PHPMailer/PHPMailer) e [@Trumbowyg](https://alex-d.github.io/Trumbowyg/). Também foi criada uma API para a comunicação entre back-end e front-end.
 
 ## Tecnologias utilizadas
 
